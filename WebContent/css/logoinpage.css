@@ -1,0 +1,36 @@
+*{margin:0;padding:0;}
+body{font-size: 12px;}
+a{text-decoration: none;}
+a:link,a:visited{color:#0066CC;}
+a:hover{color: #FF6803;}
+header{background-color: #FFFFFF;height: 82px;margin: 1px 1px;box-shadow:1px 1px 0.5em #E1E1E1;}
+header section{width:1230px;margin: 0 auto;padding-top: 13px;}
+/*右侧导航栏*/
+#div1,#div2{float:right;}
+#div1,#div2 img{vertical-align:middle; }
+#div1{margin-left:40px;}
+#div2{margin-top:5px;}
+
+.p12{color: #999999;}
+#div1 ul{position: relative;z-index: 2;background-color: white;}
+#div1_li{list-style-type: none;padding: 5px;}
+#div1_li img      {vertical-align: middle;}
+.div1_li{display: none;list-style-type: none;padding: 5px;}
+/*.div1_li{display: none;}*/
+/*登录界面设置*/
+#sec1{height: 450px;position: relative;background-color:#FCFCFC;}
+#div3{position: absolute;top: 70px;left:300px;}
+#div4{width: 340px;height: 360px;position: absolute;top: 30px;left:880px;background-color:#FFFFFF;
+      padding:50px 30px 0; }
+#div4 p:nth-of-type(1){font-weight: bold;font-size: 14px;color: #666666;}
+#div4 p:nth-of-type(1) a{display: inline-block;color: #0066D0;margin:0 0 10px 150px;}
+#div4 .for1 {display: inline-block;width: 330px;height: 54px;border: 0px solid #DEDEDE;margin: 10px 0;}
+#div4 .for1 img{display: inline-block;border-right: 1px solid #DEDEDE;padding: 15px 16px;vertical-align: middle;}
+#div4 .for1 input{width: 272px;height: 50px;}
+#div4 p:nth-of-type(4){display: inline-block;margin: 10px;color: #999999;}
+#div4 p:nth-of-type(4) a{display: inline-block;margin-left: 180px;color: #999999}
+#div4 p:nth-of-type(5) input{margin: 10px;width: 330px;height: 52px;background-color: #FF3C3C;color: #FFFFFF;font-size: 20px;border: 0 solid #FF3C3C;}
+#div4 p:nth-of-type(6){color: #666666;}
+#div4_ul li{list-style-type: none;display: inline-block;margin:5px 5px; vertical-align: middle;}
+#foot{margin: 10px auto;text-align: center;}
+#foot a{color: #333333;}
