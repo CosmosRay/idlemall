@@ -49,7 +49,7 @@
         </form>
     </div>
 </section>
-
+<hr>
 <!--页脚部分-->
 <footer id="foot">
     <p><a href="">豫ICP备16050468号</a>&nbsp;|&nbsp;<a href="">豫B2-20170039</a>&nbsp;|&nbsp;<a href="">营业执照</a></p>
