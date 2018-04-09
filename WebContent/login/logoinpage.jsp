@@ -32,7 +32,7 @@
     <div id="div3"><a href="../commodity/index.html"><img src="../images/logo/loginlogo_1.jpg"/></a></div>
     <div id="div4">
         <form method="post" action="">
-            <p>闲置网登录<a href="../register/regisiterpage.html">注册新账号</a></p>
+            <p> 闲置网登录<a href="../register/regisiterpage.html">注册新账号</a></p>
             <p class="for1"><img src="../images/logo/i_u.png"/><input type="text" name="iname"></p>
             <p class="for1"><img src="../images/logo/i_pwd.png"/><input type="password" name="ipass"></p>
             <p><input type="checkbox" name="zidong">自动登录 <a href="">忘记密码？</a></p>
