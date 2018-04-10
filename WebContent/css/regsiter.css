@@ -1,0 +1,115 @@
+#resec1{height: 534px;background-color: #FCFCFC;margin-bottom: 30px;}
+#re_div1{
+    width: 1200px;
+    height: 534px;
+    margin: 0 auto;
+    position: relative;
+}
+/*--------------------------------输入框提示文字------------------------------------*/
+
+#re_div2{position: relative;top:-550px;margin: auto auto;background-color: rgba(255,255,255,0);width: 350px;height: 500px;z-index: 5}
+.rein{position: relative;height: 75px}
+.show_div{
+    width: 200px;
+    position: absolute;
+    top: 5px;
+    left: 350px;
+    height: 60px;
+    display: none;
+}
+.show_div p{
+    display: inline-block;
+}
+.show_div2{
+    display: inline-block;
+    background-color:#E4E4E4 ;
+    padding:10px;
+}
+.show_p1{
+    position: absolute;top: 30px;
+    margin: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: #E4E4E4;
+    transform: rotate(45deg);
+}
+.show_p2{
+    line-height: 20px;
+}
+/*============================================================*/
+.show2_div{
+    width: 200px;
+    position: absolute;
+    top: 5px;
+    left: 350px;
+    height: 60px;
+    display: none;
+}
+.show2_div p{
+    display: inline-block;
+}
+.show2_div2{
+    display: inline-block;
+    background-color:#FFF4D7 ;
+    padding:10px;
+}
+.show2_p1{
+    position: absolute;top: 30px;
+    margin: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: #FFF4D7;
+    transform: rotate(45deg);
+}
+.show2_p2{
+    line-height: 20px;
+}
+
+
+/*===============================================================*/
+#re_div2 h1{font-size: 24px;font-weight: bold;display: inline-block;margin:30px 0 20px 100px;}
+#re_div2 input{box-sizing: border-box;padding: 0 20px;border-radius: 5px;width: 330px;height: 50px;border: 1px solid #DEDEDE;margin: 10px 0;}
+#re_div2 #re_in3 input:nth-of-type(1){width: 230px;height: 50px;}
+#re_div2 #re_in3 input:nth-of-type(2){width: 100px;height: 50px;background-color: #57565F;color: white;font-size: 14px;}
+#re_div2 span{position: absolute;font-size: 14px;color: #666666;}
+#re_div2 span{top: 25px;left: 20px;}
+#re_in6{background-color: #FF3C3C;font-weight: bold;color: white;}
+#re_in6:hover{background-color: #D72226;}
+/*#re_in1 input:checked*/
+/*
+.rein:hover span{
+    animation:moveleft 0.5s linear;
+    transform: translatex(-100px);}
+.rein:visited span{
+    transform: translatex(-100px);}
+*/
+/*-----------------------------------------注册界面背景渐变------------------------------------------*/
+.re_in{
+    animation:moveleft 0.5s linear;
+    transform: translateX(-100px);
+}
+@keyframes moveleft {
+   from{transform: translateX(0px);}
+    to{transform: translateX(-100px);}
+
+}
+.re_div1{
+    animation:backimg 20s linear infinite;
+}
+@keyframes backimg {
+    0%{background:url("../images/logo/reg_01.png");opacity:0.3;}
+    10%{background:url("../images/logo/reg_01.png");opacity:0.5;}
+    25%{background:url("../images/logo/reg_2.png");opacity:0.3;}
+    30%{background:url("../images/logo/reg_01.png");opacity:0.3;}
+    35%{background:url("../images/logo/reg_2.png");opacity:0.5;}
+    40%{background:url("../images/logo/reg_03.png");opacity:0.3;}
+    45%{background:url("../images/logo/reg_2.png");opacity:0.3;}
+    50%{background:url("../images/logo/reg_03.png");opacity:0.5;}
+    60%{background:url("../images/logo/reg_04.png");opacity:0.3;}
+    65%{background:url("../images/logo/reg_03.png");opacity:0.3;}
+    70%{background:url("../images/logo/reg_04.png");opacity:0.5;}
+    80%{background:url("../images/logo/reg_05.png");opacity:0.3;}
+    85%{background:url("../images/logo/reg_04.png");opacity:0.3;}
+    95%{background:url("../images/logo/reg_05.png");opacity:0.5;}
+    100%{background:url("../images/logo/reg_05.png");opacity:0.3;}
+}
