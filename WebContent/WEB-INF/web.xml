@@ -50,7 +50,7 @@
   </filter-mapping>
   <filter>
     <filter-name>SessionFilter</filter-name>
-    <filter-class>com.topnet.yqms.util.interceptor.SessionFilter</filter-class>
+    <filter-class>com.idlemall.cosmos.util.interceptor.SessionFilter</filter-class>
     <init-param>
       <param-name>noFilter</param-name>
       <param-value>index.jsp</param-value>
