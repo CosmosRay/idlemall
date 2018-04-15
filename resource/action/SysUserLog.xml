@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="customUserGz" extends="json-default,interceptor" namespace="/customUserGz">
+		<action name="customUserGz" class="customUserGzAction">
+			<result name="success" type="json"></result>
+			<result name="json" type="json"></result>
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="SessionValidation" />
+		</action>
+	</package>
+</struts>
