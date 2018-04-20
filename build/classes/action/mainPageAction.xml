@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- mainPageAction -->
+	<package name="mainPageAction" extends="struts-default,json-default" namespace="/mainPageAction">
+		<action name="selectGoods" class="mainPageAction" method="selectGoods">
+			<result name="success" type="redirect">/commodity/index.jsp</result>
+		</action>
+		
+		<action name="enterOne" class="mainPageAction" method="enterOne">
+			<result name="success" type="redirect">/commodity/detail.jsp</result>
+		</action>
+		<!-- 下一页 -->
+		<action name="nextPage" class="mainPageAction" method="nextPage">
+			<result name="success" type="redirect">/commodity/index.jsp</result>
+		</action>
+		<!-- 上一页 -->
+		<action name="perviousPage" class="mainPageAction" method="perviousPage">
+			<result name="success" type="redirect">/commodity/index.jsp</result>
+		</action>
+	</package>
+	
+</struts>
