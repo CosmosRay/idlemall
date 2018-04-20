@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.idlemall.cosmos" />
+
+	<!--读取数据库属性文件 jdbc.properties -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean>
+
+	<!--定义一个数据源 dataSource -->
+	<bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!--创建一个sessionFactory 与 hibernate3整合使用 , 注意：hibernate.dialect 的值-->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.idlemall.cosmos.model</value>
+
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<!--
+					防止Exception in thread "main" org.hibernate.HibernateException: No
+					CurrentSessionContext configured!
+				-->
+				<prop key="current_session_context_class">thread</prop>
+				<!-- 是否展示HQL语句 -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 规范HQL在控制台输出的格式 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<!--
+					自动创建表结构,假如删除了数据库，又运行了更新数据库操作方法的话，就不用特意运行ExportDB创建数据库了
+					该值update的为在后追加数据 ，假如create的则是重建表-->
+<!-- 				<prop key="hibernate.hbm2ddl.auto">create</prop> -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 在所有 SQL DDL 语句执行时为它们记录日志 -->
+<!-- 				<prop key="org.hibernate.tool.hbm2ddl">create</prop> -->
+				<prop key="org.hibernate.tool.hbm2ddl">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--创建一个由sessionFactory 映射的 hibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!--AOP管理配置，配置事务管理器  -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+
+</beans>

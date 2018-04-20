@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="regisiterPageAction" extends="struts-default,json-default" namespace="/regisiterPageAction">
+		<action name="startRegisiter" class="regisiterPageAction" method="startRegisiter">
+			<result name="success" type="redirect">/sysuser/login/regisiterpage.jsp</result>
+		</action>
+		<action name="addSysUser" class="regisiterPageAction" method="addSysUser">
+			<result name="success" type="redirect">/sysuser/login/loginpage.jsp</result>
+			<result name="defeated" type="redirect">/sysuser/login/regisiterpage.jsp</result>
+		</action>
+	</package>
+</struts>
