@@ -15,44 +15,70 @@
 	<base href="<%=basePath%>">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>css/header.css">
-</head>
-<body>
+    <script type="text/javascript" src="<%=basePath %>js/jquery-3.2.1.min.js"></script>
 	<script>
-    	verify();
+    	<%-- verify();
     	function verify(){
     		if(<%=sysUser%>==null){
     			location.href="<%=basePath%>sysuser/login/loginpage.jsp";
     		}
-    	}
+    	}; --%>
+    	function Check_Home(){
+    		alert("检查标签！");
+    		if(document.getElementById("qq").value==""||document.getElementById("address").value==""){
+    			alert("请将信息填写完整！");
+    			return false;
+    		}else{
+    			return true;
+    		}
+    	};
     </script>
+</head>
+<body>
 <section id="personal_sec1">
 	    
     <div>
         <img src="<%=basePath%>images/user/123.jpg" height="200px"/>
     </div>
     <br><br><br>
+    <form action="<%=basePath %>sysUserAction/saveOwn.action" method="post" onsubmit="return Check_Home()">
     <ul>
         <li>ID号：<%=sysUser.getUser_id()%></li>
         <li>用户名：<%=sysUser.getUser_name()%></li>
-        <li>性别：<select name="gender">
+        <li>性别：<select id="gender" name="gender">
 					<option value="1">男</option>        
 					<option value="0">女</option>        
         		</select>
         </li>
-        <li>年级：<select name="class">
+        <li>年级：<select id="class" name="class">
 					<option value="2018">2018</option>        
 					<option value="2017">2017</option>        
 					<option value="2016">2016</option>        
 					<option value="2015">2015</option>        
 					<option value="2014">2014</option>        
         		</select>级</li>
-        <li>院系：<input type="text" name="faculty" value="<%=sysUser.getFaculty_sort_id()%>"></li>
-        <li>QQ：<input type="text" name="faculty" value="<%=sysUser.getUser_qq()%>"></li>
-        <li>地址：<input type="text" name="faculty" value="<%=sysUser.getUser_address()%>"></li>
+        <li>院系：<select id="faculty" name="faculty">
+					<option value="1">第一临床医学院</option>        
+					<option value="2">第二临床医学院、骨伤学院</option>        
+					<option value="3">针灸推拿学院</option>        
+					<option value="4">基础医学院</option>        
+					<option value="5">药学院</option>        
+					<option value="6">管理学院</option>        
+					<option value="7">外语学院</option>        
+					<option value="8">信息技术学院</option>        
+					<option value="9">继续教育学院</option>        
+					<option value="10">护理学院</option>        
+					<option value="11">康复学院</option>        
+					<option value="12">国际教育学院</option>        
+        		</select>
+        		</li>
+        <li>QQ：<input id="qq" type="text" name="qq" value="<%=sysUser.getUser_qq()%>"></li>
+        <li>地址：<input  id="address" type="text" name="address" value="<%=sysUser.getUser_address()%>"></li>
         <li>我的发布：<%=sysUser.getUser_sale()%>件</li>
         <li>信用积分：<%=sysUser.getUser_credit()%></li>
-        <li><button>保存</button></li>
+        <li><input type="submit" value="保存"/></li>
     </ul>
+    </form>
 </section>
 <div id="personal_div1">
 

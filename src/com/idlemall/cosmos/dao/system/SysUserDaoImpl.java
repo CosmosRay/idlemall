@@ -57,4 +57,29 @@ public class SysUserDaoImpl implements SysUserDao{
 		return usr;
 	}
 
+	@Override
+	public int saveSysUser(Object[] param, String sql) {
+		DBConnection dbc = new DBConnection();
+		Connection conn  =  dbc.getConn();
+		PreparedStatement pst = null;
+		int k = 0;
+		try {
+			//预编译sql语句
+			pst = conn.prepareStatement(sql);
+			for(int i = 0; i<param.length;i++){
+				pst.setObject(i+1, param[i]);
+			}
+			System.out.println("输出SQL语句 ： "+sql);
+			k = pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			dbc.closeConn(pst, conn);
+		}
+		return k;
+	}
+
+	
+
 }

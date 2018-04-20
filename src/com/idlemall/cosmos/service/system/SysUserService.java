@@ -9,5 +9,17 @@ public interface SysUserService {
 	 * @return
 	 */
 	public SysUser selectSysUser(SysUser user); 
+	/**
+	 * 保存用户信息
+	 * @param user
+	 * @return
+	 */
+	public int saveSysUser(SysUser user); 
+	/**
+	 * 保存用户新密码
+	 * @param user
+	 * @return
+	 */
+	public int savePwd(int id,String jpwd,String xpwd); 
 	
 }

@@ -48,7 +48,7 @@
         <li>地址：<%=sysUser.getUser_address()%></li>
         <li>我的发布：<%=sysUser.getUser_sale()%>件</li>
         <li>信用积分：<%=sysUser.getUser_credit()%></li>
-        <li><button>修改个人信息</button>&nbsp;<button>修改密码</button></li>
+        <li><a href="<%=basePath %>sysUserAction/editOwn.action">修改个人信息</a>&nbsp;&nbsp;&nbsp;<a href="<%=basePath %>sysUserAction/editPwd.action">修改密码</a></li>
     </ul>
 </section>
 <div id="personal_div1">

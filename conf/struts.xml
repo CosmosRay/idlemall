@@ -11,5 +11,6 @@
 	<include file="action/trolleyPageAction.xml"/>
 	<include file="action/sysUserAction.xml"/>
 	<include file="action/shopMineAction.xml"/>
+	<include file="action/shopReleaseAction.xml"/>
 
 </struts>

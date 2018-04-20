@@ -20,4 +20,5 @@
 	<bean id="trolleyPageAction" class="com.idlemall.cosmos.action.system.TrolleyPageAction"  scope="prototype"/>
 	<bean id="sysUserAction" class="com.idlemall.cosmos.action.system.SysUserAction"  scope="prototype"/>
 	<bean id="shopMineAction" class="com.idlemall.cosmos.action.system.ShopMineAction"  scope="prototype"/>
+	<bean id="shopReleaseAction" class="com.idlemall.cosmos.action.system.ShopReleaseAction"  scope="prototype"/>
 </beans>

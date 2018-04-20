@@ -15,34 +15,46 @@
 	<base href="<%=basePath%>">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>css/header.css">
-</head>
-<body>
+    <script type="text/javascript" src="<%=basePath %>js/jquery-3.2.1.min.js"></script>
 	<script>
-    	verify();
+    	<%-- verify();
     	function verify(){
     		if(<%=sysUser%>==null){
     			location.href="<%=basePath%>sysuser/login/loginpage.jsp";
     		}
+    	} --%>
+    	function Check_Home(){
+    		if(document.getElementById("jpwd").value==""||document.getElementById("xpwd").value==""||document.getElementById("zpwd").value==""){
+    			alert("密码输入不能为空！");
+				return false;    			
+    		}
+    		if(document.getElementById("xpwd").value!=document.getElementById("zpwd").value){
+    			alert("两次新密码输入不同");
+    			return false;
+    		}
+    		return true;
     	}
     </script>
+</head>
+<body>
 <section id="personal_sec1">
 	    
     <%-- <div>
         <img src="<%=basePath%>images/user/123.jpg" height="200px"/>
     </div> --%>
     <br><br><br>
-    <form method="post" action="">
+    <form method="post" action="" onsubmit="return Check_Home()">
     <ul>
-        <li>&nbsp;旧密码：<input type="password" name="jpwd"></li>
-        <li>&nbsp;新密码：<input type="password" name="xpwd"></li>
-        <li>再次输入：<input type="password" name="jpwd"></li>
+        <li>&nbsp;旧密码：<input type="password" id="jpwd" name="jpwd"></li>
+        <li>&nbsp;新密码：<input type="password" id="xpwd" name="xpwd"></li>
+        <li>再次输入：<input type="password" id="zpwd" name="zpwd"></li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
-        <li><button>保存</button></li>
+        <li><input type="submit" value="保存"></li>
     </ul>
     </form>
 </section>

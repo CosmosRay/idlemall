@@ -39,6 +39,10 @@
     		alert("我的商城！");
     		 location.href = "<%=basePath %>shopMineAction/myShop.action";
     	};
+    	function shoprelease_click(){
+    		alert("我的商城！");
+    		 location.href = "<%=basePath %>shopReleaseAction/enterRelease.action";
+    	};
     </script>
 </head>
 <body>
@@ -59,7 +63,7 @@
             <li onclick="personal_click()">主页</li>|
             <li onclick="shoptrolley_click()">购物车</li>|
             <li onclick="shopmine_click()">我的商城</li>|
-            <li>发布闲置</li>
+            <li onclick="shoprelease_click()">发布闲置</li>
         </ul>
     </div>
 </header>
